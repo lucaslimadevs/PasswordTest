@@ -16,12 +16,12 @@ namespace Algorithms
 
         static bool IsPasswordStrong(string s)
         {
-            return s.Any(char.IsUpper) &&                     //check if has upper character
-                s.Any(char.IsLower) &&                        //check if has lower character
-                s.Any(char.IsDigit) &&                        //check if has number        
-                s.Any(ch => ! char.IsLetterOrDigit(ch)) &&    //check if has special character
-                !_sequencial.Contains(GetNumbers(s)) &&       //check if has sequential numbers
-                (s.Count() >= _size);                         //check if has more than 7 caracters
+            return s.Any(char.IsUpper) &&                     //check if string contains a upper character
+                s.Any(char.IsLower) &&                        //check if string contains a lower character
+                s.Any(char.IsDigit) &&                        //check if string contains a number        
+                s.Any(ch => ! char.IsLetterOrDigit(ch)) &&    //check if string contains a special character
+                !_sequencial.Contains(GetNumbers(s)) &&       //check if string don't contains sequential numbers
+                (s.Count() >= _size);                         //check size of password
         }
 
         static void Main(string[] args)
